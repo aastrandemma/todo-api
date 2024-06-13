@@ -1,17 +1,15 @@
 package org.github.aastrandemma.todoapi.domain.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.Set;
 
-@Setter
 @Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 
+@Builder
 public class UserDTOForm {
     private String email;
     private String password;
