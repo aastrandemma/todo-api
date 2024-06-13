@@ -13,6 +13,7 @@ import java.util.Set;
 @ToString
 @EqualsAndHashCode
 
+@Builder
 @Entity
 public class User {
     @Id

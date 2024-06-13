@@ -8,7 +8,7 @@ import lombok.*;
 @NoArgsConstructor
 
 @Builder
-public class RoleDTOForm {
-    private long id;
+public class PersonDTOView {
+    private Long id;
     private String name;
 }
