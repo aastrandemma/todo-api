@@ -5,14 +5,20 @@ import org.github.aastrandemma.todoapi.domain.entity.Role;
 import org.springframework.stereotype.Component;
 
 @Component
-public class RoleConverterImpl implements RoleConverter {
+public class RoleConverterImpl implements Converter<Role, RoleDTOView> {
     @Override
-    public RoleDTOView toRoleDTO(Role entity) {
-        return new RoleDTOView(entity.getId(), entity.getName());
+    public RoleDTOView entityToDTO(Role entity) {
+        return RoleDTOView.builder()
+                .id(entity.getId())
+                .name(entity.getName())
+                .build();
     }
 
     @Override
-    public Role toRoleEntity(RoleDTOView dtoView) {
-        return new Role(dtoView.getId(), dtoView.getName());
+    public Role DTOToEntity(RoleDTOView dtoView) {
+        return Role.builder()
+                .id(dtoView.getId())
+                .name(dtoView.getName())
+                .build();
     }
 }
