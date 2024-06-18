@@ -9,6 +9,6 @@ public interface PersonService {
     PersonDTOView registerPerson(PersonDTOForm dtoForm);
     PersonDTOView findByPersonId(Long personId);
     List<PersonDTOView> findAllPeople();
-    void updatePerson(PersonDTOForm dtoForm);
+    PersonDTOView updatePerson(PersonDTOForm dtoForm);
     void deletePerson(Long personId);
 }

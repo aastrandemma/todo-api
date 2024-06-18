@@ -15,4 +15,5 @@ public interface TaskService {
     List<TaskDTOView> findTasksBetweenStartAndEndDate(LocalDate startDate, LocalDate endDate);
     List<TaskDTOView> findAllUnassignedTasks();
     List<TaskDTOView> findAllUnfinishedTasksAndOverdue();
+    TaskDTOView addTaskToPerson(Long personId, TaskDTOForm dtoForm);
 }

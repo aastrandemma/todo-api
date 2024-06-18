@@ -50,12 +50,13 @@ public class PersonServiceImpl implements PersonService {
     }
 
     @Override
-    public void updatePerson(@Valid PersonDTOForm dtoForm) {
+    public PersonDTOView updatePerson(@Valid PersonDTOForm dtoForm) {
         ValidationUtil.validateObject(dtoForm, validator, "Person form is not valid");
         Person updatePerson = personRepository.findById(dtoForm.getId())
                 .orElseThrow(() -> new DataNotFoundException("Person not found"));
         updatePerson.setName(dtoForm.getName());
-        personRepository.save(updatePerson);
+        Person personUpdated = personRepository.save(updatePerson);
+        return personConverter.entityToDTO(personUpdated);
     }
 
     @Override
